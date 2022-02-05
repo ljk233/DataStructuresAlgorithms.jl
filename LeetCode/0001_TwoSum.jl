@@ -11,6 +11,8 @@ using Test
 md"""
 # LeetCode 1. Two Sum
 
+[Back to Repo](https://github.com/ljk233/DataStructuresAlgorithms.jl)
+
 Given an array of integers `nums` and an integer `target`, return *indices of the two numbers such that they add up to `target`.*
 
 You may assume that each input would have exactly one solution, and you may not use the same element twice.
@@ -38,15 +40,15 @@ md"""
 
 # ╔═╡ 4709db36-a327-11ea-13a3-bbfb18da84ce
 """
-	twosum(nums: Int[], target: int) -> Int[]
+    twosum(nums: Int[], target: int) -> Int[]
 """
 function twosum(nums, target)
-	hashmap = Dict{Integer, Integer}()
-	for (index, num) in enumerate(nums)
-		complement = target - num
-		complement in keys(hashmap) && (return [hashmap[complement], index])
-		hashmap[num] = index
-	end
+    hashmap = Dict{Integer, Integer}()
+    for (index, num) in enumerate(nums)
+        complement = target - num
+        complement in keys(hashmap) && (return [hashmap[complement], index])
+        hashmap[num] = index
+    end
 end
 
 # ╔═╡ 3517edf7-2a6a-4fdd-85a6-2161410d534d
