@@ -9,28 +9,21 @@ using Test
 
 # ╔═╡ 5b2ee40e-a2b8-11ea-0fef-c35fe6918860
 md"""
-# 1. Two Sum
+# 217. Contains Duplicate
 
 [Back to Repo](https://github.com/ljk233/DataStructuresAlgorithms.jl)
 
-Given an array of integers `nums` and an integer `target`, return *indices of the two numbers such that they add up to `target`.*
-
-You may assume that each input would have exactly one solution, and you may not use the same element twice.
-
-You can return the answer in any order.
+Given an integer array `nums`, return `true` if any value appears at least twice in the array, and return `false` if every element is distinct.
 """
 
 # ╔═╡ e347f1de-a2bb-11ea-06e7-87cca6f2a240
 md"""
 ## Algorithm
 
-1. let _hashmap_ be an empty hash map
-2. for _index_ in 0:|*nums*|
-   1. *complement* = *target* - *nums*[*index*]
-   2. if *hashmap* contains *complement*
-      1. *indices* = (*hashmap*[*complement*], *index*)
-   3. otherwise
-      1. let *hashmap*(*nums*[*index*]) be *index*
+1. let _sorted_ be _nums_ arranged in ascending order
+2. for _index_ from 1 to |_nums_|-1
+   1. if _nums_[_index_] == _nums_[_index_ + 1]
+      1. _duplicate_ = true
 """
 
 # ╔═╡ 27fbfd37-f8a2-4fb2-9157-06346983f054
@@ -40,15 +33,16 @@ md"""
 
 # ╔═╡ 4709db36-a327-11ea-13a3-bbfb18da84ce
 """
-    twosum(nums: Int[], target: int) -> Int[]
+    contains_duplicates(nums: Int[]) -> Bool
 """
-function twosum(nums, target)
-    hashmap = Dict{Integer, Integer}()
-    for (index, num) in enumerate(nums)
-        complement = target - num
-        complement in keys(hashmap) && (return [hashmap[complement], index])
-        hashmap[num] = index
+function contains_duplicates(nums)
+    sorted = sort(nums)
+    for index in 1:lastindex(sorted)-1
+        if sorted[index] == sorted[index+1]
+            return true
+        end
     end
+    return false
 end
 
 # ╔═╡ 3517edf7-2a6a-4fdd-85a6-2161410d534d
@@ -57,13 +51,22 @@ md"""
 """
 
 # ╔═╡ 820ff60d-40e8-4739-963c-dbdd44646d05
-@test twosum([2,7,11,15], 9) == [1,2]
+@test contains_duplicates([1]) == false
 
 # ╔═╡ dd32bf8f-8baa-4049-b80a-2c4403cebdff
-@test twosum([3,2,4], 6) == [2,3]
+@test contains_duplicates([1,2]) == false
 
 # ╔═╡ 22778db0-96d2-4d4a-ba77-c1a621458300
-@test twosum([3,3], 6) == [1,2]
+@test contains_duplicates([1,1]) == true
+
+# ╔═╡ 24aee243-ad7f-457a-af17-62ae780242ed
+@test contains_duplicates([3,1,1]) == true
+
+# ╔═╡ b42da88e-c60e-4441-8e93-4244d1fe5fe6
+@test contains_duplicates([1,3,1]) == true
+
+# ╔═╡ 79cc988a-b49b-4290-8f26-76072d09c9b3
+@test contains_duplicates([1,3,3]) == true
 
 # ╔═╡ 00000000-0000-0000-0000-000000000001
 PLUTO_PROJECT_TOML_CONTENTS = """
@@ -117,5 +120,8 @@ uuid = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
 # ╟─820ff60d-40e8-4739-963c-dbdd44646d05
 # ╟─dd32bf8f-8baa-4049-b80a-2c4403cebdff
 # ╟─22778db0-96d2-4d4a-ba77-c1a621458300
+# ╟─24aee243-ad7f-457a-af17-62ae780242ed
+# ╟─b42da88e-c60e-4441-8e93-4244d1fe5fe6
+# ╟─79cc988a-b49b-4290-8f26-76072d09c9b3
 # ╟─00000000-0000-0000-0000-000000000001
 # ╟─00000000-0000-0000-0000-000000000002
