@@ -16,11 +16,11 @@ md"""
 md"""
 ## LeetCode
 
-[1. Two Sum](https://ljk233.github.io/DataStructuresAlgorithms.jl/LeetCode/0001_TwoSum.html)\
-[53. Maximum Subarray](https://ljk233.github.io/DataStructuresAlgorithms.jl/LeetCode/0053_MaximumSubarray.html)\
-[88. Merge Sorted Arrays](https://ljk233.github.io/DataStructuresAlgorithms.jl/LeetCode/0088_MergeSortedArraysy.html)\
-[217. Contains Duplicates](https://ljk233.github.io/DataStructuresAlgorithms.jl/LeetCode/0217_ContainsDuplicate.html)\
-[283. Move Zeroes](https://ljk233.github.io/DataStructuresAlgorithms.jl/LeetCode/0283_MoveZeroes.html)
+- [1. Two Sum](https://ljk233.github.io/DataStructuresAlgorithms.jl/LeetCode/0001_TwoSum.html)
+- [53. Maximum Subarray](https://ljk233.github.io/DataStructuresAlgorithms.jl/LeetCode/0053_MaximumSubarray.html)
+- [88. Merge Sorted Arrays](https://ljk233.github.io/DataStructuresAlgorithms.jl/LeetCode/0088_MergeSortedArrays.html)
+- [217. Contains Duplicates](https://ljk233.github.io/DataStructuresAlgorithms.jl/LeetCode/0217_ContainsDuplicate.html)
+- [283. Move Zeroes](https://ljk233.github.io/DataStructuresAlgorithms.jl/LeetCode/0283_MoveZeroes.html)
 """
 
 # ╔═╡ 00000000-0000-0000-0000-000000000001
@@ -240,7 +240,7 @@ uuid = "3f19e933-33d8-53b3-aaab-bd5110c3b7a0"
 
 # ╔═╡ Cell order:
 # ╟─1d98e9a0-8740-11ec-231f-156ed6f7ac83
-# ╠═71471048-fa39-461b-a7c0-d5a3e49987c9
+# ╟─71471048-fa39-461b-a7c0-d5a3e49987c9
 # ╠═a83068fa-2744-4ea5-8319-b2f844adc520
 # ╟─00000000-0000-0000-0000-000000000001
 # ╟─00000000-0000-0000-0000-000000000002
